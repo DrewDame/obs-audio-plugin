@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\noahw\Documents\Cursor Projects\First\obs-audio-plugin\build\CMakeFiles\5728a985aa8d4b6273ec275c7bf1f396\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{681F1DFD-B801-3728-A616-ABD96B7EF880}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

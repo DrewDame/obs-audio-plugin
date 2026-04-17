@@ -1,0 +1,5 @@
+C:/Users/noahw/Documents/Cursor Projects/First/obs-audio-plugin/build/CMakeFiles/obs-audio-recorder.dir
+C:/Users/noahw/Documents/Cursor Projects/First/obs-audio-plugin/build/CMakeFiles/PACKAGE.dir
+C:/Users/noahw/Documents/Cursor Projects/First/obs-audio-plugin/build/CMakeFiles/INSTALL.dir
+C:/Users/noahw/Documents/Cursor Projects/First/obs-audio-plugin/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/noahw/Documents/Cursor Projects/First/obs-audio-plugin/build/CMakeFiles/ZERO_CHECK.dir

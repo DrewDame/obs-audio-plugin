@@ -55,12 +55,18 @@ AudioRecorderDock::AudioRecorderDock(QWidget *parent) : QWidget(parent)
 	status_label_->setAlignment(Qt::AlignCenter);
 	status_label_->setStyleSheet("color: #aaa; font-size: 11px;");
 
+	state_timer_ = new QTimer(this);
+	state_timer_->setInterval(250);
+
 	layout->addWidget(toggle_btn_);
 	layout->addWidget(status_label_);
 	layout->addStretch();
 
 	connect(toggle_btn_, &QPushButton::clicked, this,
 		&AudioRecorderDock::on_toggle_clicked);
+	connect(state_timer_, &QTimer::timeout, this,
+		&AudioRecorderDock::sync_recording_state);
+	state_timer_->start();
 }
 
 void AudioRecorderDock::on_toggle_clicked()
@@ -80,6 +86,18 @@ void AudioRecorderDock::on_toggle_clicked()
 			status_label_->setText(
 				obs_module_text("ErrorStarting"));
 		}
+	}
+}
+
+void AudioRecorderDock::sync_recording_state()
+{
+	recorder_.poll();
+	if (!recorder_.is_recording() && toggle_btn_->isChecked()) {
+		set_recording_ui(false);
+		if (!recorder_.last_error().empty())
+			status_label_->setText(
+				QString("Recording failed: %1")
+					.arg(QString::fromStdString(recorder_.last_error())));
 	}
 }
 

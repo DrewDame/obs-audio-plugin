@@ -1,0 +1,10 @@
+^C:\USERS\NOAHW\DOCUMENTS\CURSOR PROJECTS\FIRST\OBS-AUDIO-PLUGIN\BUILD\CMAKEFILES\5728A985AA8D4B6273EC275C7BF1F396\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/noahw/Documents/Cursor Projects/First/obs-audio-plugin" "-BC:/Users/noahw/Documents/Cursor Projects/First/obs-audio-plugin/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/noahw/Documents/Cursor Projects/First/obs-audio-plugin/build/obs-audio-recorder.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,2 @@
+C:/Users/noahw/Documents/Cursor Projects/First/obs-audio-plugin/build/_CPack_Packages/win64/NSIS/obs-audio-recorder-1.0.0-windows-x64/obs-plugins/64bit/obs-audio-recorder.dll
+C:/Users/noahw/Documents/Cursor Projects/First/obs-audio-plugin/build/_CPack_Packages/win64/NSIS/obs-audio-recorder-1.0.0-windows-x64/data/obs-plugins/obs-audio-recorder/locale/en-US.ini

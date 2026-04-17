@@ -3,6 +3,7 @@
 #include <QWidget>
 #include <QPushButton>
 #include <QLabel>
+#include <QTimer>
 #include "audio-recorder.h"
 
 class AudioRecorderDock : public QWidget {
@@ -17,6 +18,7 @@ public:
 
 private slots:
 	void on_toggle_clicked();
+	void sync_recording_state();
 
 private:
 	std::string build_output_path() const;
@@ -24,6 +26,7 @@ private:
 
 	QPushButton *toggle_btn_;
 	QLabel *status_label_;
+	QTimer *state_timer_;
 	AudioRecorder recorder_;
 
 	static AudioRecorderDock *instance_;

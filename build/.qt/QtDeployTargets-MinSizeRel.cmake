@@ -1,0 +1,3 @@
+set(__QT_DEPLOY_TARGET_obs-audio-recorder_FILE C:/Users/noahw/Documents/Cursor Projects/First/obs-audio-plugin/build/MinSizeRel/obs-audio-recorder.dll)
+set(__QT_DEPLOY_TARGET_obs-audio-recorder_TYPE MODULE_LIBRARY)
+set(__QT_DEPLOY_TARGET_obs-audio-recorder_RUNTIME_DLLS C:/src/obs-studio/build-local/rundir/Release/bin/64bit/obs.dll;C:/src/obs-studio/build-local/rundir/Release/bin/64bit/obs-frontend-api.dll;C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/bin/Qt6Widgets.dll;C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/bin/Qt6Gui.dll;C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/bin/Qt6Core.dll)
