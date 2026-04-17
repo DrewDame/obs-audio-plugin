@@ -5,10 +5,12 @@ Audio-only recording dock plugin for OBS Studio.
 ## Install In OBS
 
 1. Close OBS Studio.
-2. Run the installer: [Open installer EXE](./build/obs-audio-recorder-1.0.0-windows-x64.exe)
-3. In the installer, keep the install folder set to your OBS location (usually `C:\Program Files\obs-studio`).
-4. Finish installation, then launch OBS Studio.
-5. Open the plugin dock from OBS and use **Start Recording** / **Stop Recording**.
+2. If Windows blocks the installer, temporarily disable **Smart App Control** in Windows Security.
+3. Run the installer: [Open installer EXE](./build/obs-audio-recorder-1.0.0-windows-x64.exe)
+4. In the installer, keep the install folder set to your OBS location (usually `C:\Program Files\obs-studio`).
+5. Finish installation, then launch OBS Studio.
+6. Re-enable Smart App Control in Windows Security after install (the plugin works with Windows Security enabled).
+7. Open the plugin dock from OBS and use **Start Recording** / **Stop Recording**.
 
 ## Manual Install (ZIP fallback)
 
