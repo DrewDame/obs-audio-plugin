@@ -139,6 +139,7 @@ C:/Users/noahw/Documents/Cursor\ Projects/First/obs-audio-plugin/build/obs-audio
   C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/include/QtGui/qkeysequence.h \
   C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/include/QtGui/qpaintdevice.h \
   C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/include/QtGui/qpalette.h \
+  C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/include/QtGui/qpen.h \
   C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/include/QtGui/qpicture.h \
   C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/include/QtGui/qpixelformat.h \
   C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/include/QtGui/qpixmap.h \
@@ -146,7 +147,10 @@ C:/Users/noahw/Documents/Cursor\ Projects/First/obs-audio-plugin/build/obs-audio
   C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/include/QtGui/qregion.h \
   C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/include/QtGui/qrgb.h \
   C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/include/QtGui/qrgba64.h \
+  C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/include/QtGui/qtextcursor.h \
   C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/include/QtGui/qtextdocument.h \
+  C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/include/QtGui/qtextformat.h \
+  C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/include/QtGui/qtextoption.h \
   C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/include/QtGui/qtgui-config.h \
   C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/include/QtGui/qtguiexports.h \
   C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/include/QtGui/qtguiglobal.h \
@@ -154,11 +158,13 @@ C:/Users/noahw/Documents/Cursor\ Projects/First/obs-audio-plugin/build/obs-audio
   C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/include/QtGui/qwindowdefs.h \
   C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/include/QtGui/qwindowdefs_win.h \
   C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/include/QtWidgets/QLabel \
+  C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/include/QtWidgets/QLineEdit \
   C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/include/QtWidgets/QPushButton \
   C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/include/QtWidgets/QWidget \
   C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/include/QtWidgets/qabstractbutton.h \
   C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/include/QtWidgets/qframe.h \
   C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/include/QtWidgets/qlabel.h \
+  C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/include/QtWidgets/qlineedit.h \
   C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/include/QtWidgets/qpushbutton.h \
   C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/include/QtWidgets/qsizepolicy.h \
   C:/src/obs-studio/.deps/obs-deps-qt6-2025-08-23-x64/include/QtWidgets/qtwidgets-config.h \

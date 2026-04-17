@@ -2,8 +2,11 @@
 #include <obs-frontend-api.h>
 #include <obs-module.h>
 #include <QVBoxLayout>
+#include <QHBoxLayout>
 #include <QDateTime>
 #include <QDir>
+#include <QFileDialog>
+#include <QFileInfo>
 #include <QString>
 
 AudioRecorderDock *AudioRecorderDock::instance_ = nullptr;
@@ -33,6 +36,25 @@ AudioRecorderDock::AudioRecorderDock(QWidget *parent) : QWidget(parent)
 	layout->setContentsMargins(8, 8, 8, 8);
 	layout->setSpacing(6);
 
+	const char *obs_path = obs_frontend_get_current_record_output_path();
+	QString default_dir = obs_path ? QString::fromUtf8(obs_path)
+				       : QDir::homePath() + "/Videos";
+	bfree((void *)obs_path);
+
+	path_edit_ = new QLineEdit(default_dir, this);
+	path_edit_->setPlaceholderText("Output folder (e.g. C:/Recordings)");
+
+	browse_btn_ = new QPushButton("Browse...", this);
+
+	auto *path_row = new QHBoxLayout();
+	path_row->setContentsMargins(0, 0, 0, 0);
+	path_row->setSpacing(6);
+	path_row->addWidget(path_edit_, 1);
+	path_row->addWidget(browse_btn_);
+
+	name_edit_ = new QLineEdit(this);
+	name_edit_->setPlaceholderText("File name (optional, .mp3 auto-added)");
+
 	toggle_btn_ = new QPushButton(obs_module_text("StartRecording"), this);
 	toggle_btn_->setCheckable(true);
 	toggle_btn_->setMinimumHeight(36);
@@ -58,12 +80,16 @@ AudioRecorderDock::AudioRecorderDock(QWidget *parent) : QWidget(parent)
 	state_timer_ = new QTimer(this);
 	state_timer_->setInterval(250);
 
+	layout->addLayout(path_row);
+	layout->addWidget(name_edit_);
 	layout->addWidget(toggle_btn_);
 	layout->addWidget(status_label_);
 	layout->addStretch();
 
 	connect(toggle_btn_, &QPushButton::clicked, this,
 		&AudioRecorderDock::on_toggle_clicked);
+	connect(browse_btn_, &QPushButton::clicked, this,
+		&AudioRecorderDock::on_browse_clicked);
 	connect(state_timer_, &QTimer::timeout, this,
 		&AudioRecorderDock::sync_recording_state);
 	state_timer_->start();
@@ -89,6 +115,14 @@ void AudioRecorderDock::on_toggle_clicked()
 	}
 }
 
+void AudioRecorderDock::on_browse_clicked()
+{
+	QString selected = QFileDialog::getExistingDirectory(
+		this, "Select output folder", path_edit_->text());
+	if (!selected.isEmpty())
+		path_edit_->setText(QDir::toNativeSeparators(selected));
+}
+
 void AudioRecorderDock::sync_recording_state()
 {
 	recorder_.poll();
@@ -103,17 +137,20 @@ void AudioRecorderDock::sync_recording_state()
 
 std::string AudioRecorderDock::build_output_path() const
 {
-	// Mirror OBS's default recording directory
-	const char *obs_path = obs_frontend_get_current_record_output_path();
-	QString dir = obs_path ? QString::fromUtf8(obs_path)
-			       : QDir::homePath() + "/Videos";
-	bfree((void *)obs_path);
+	QString dir = path_edit_->text().trimmed();
+	if (dir.isEmpty())
+		dir = QDir::homePath() + "/Videos";
 
-	QString filename = QDateTime::currentDateTime().toString(
-				   "yyyy-MM-dd_HH-mm-ss") +
-			   ".mp3";
+	QString filename = name_edit_->text().trimmed();
+	if (filename.isEmpty()) {
+		filename = QDateTime::currentDateTime().toString("yyyy-MM-dd_HH-mm-ss");
+	}
+	if (!filename.endsWith(".mp3", Qt::CaseInsensitive))
+		filename += ".mp3";
 
-	return QDir(dir).filePath(filename).toStdString();
+	QFileInfo out_info(QDir(dir).filePath(filename));
+	QDir().mkpath(out_info.path());
+	return out_info.absoluteFilePath().toStdString();
 }
 
 void AudioRecorderDock::set_recording_ui(bool recording)
